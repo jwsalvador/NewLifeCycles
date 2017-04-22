@@ -31,14 +31,14 @@ module.exports = (client = '') => {
   const browser = {
     name: 'client-side compile',
     entry: [
-      './src/index.js',
+      './src/index.jsx',
       'webpack-hot-middleware/client?reload=true',
     ],
     output: output(env, 'browser'),
     devtool: 'eval-source-map',
     target: 'web',
     plugins: plugins(env, 'browser'),
-    resolve: resolve('server'),
+    resolve: resolve('browser'),
     module: {
       loaders: configModule.loaders(env, 'browser'),
     },

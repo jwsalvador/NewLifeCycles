@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint:w": "esw --ext .js,.jsx webpack server",
-    "lint": "eslint --ext .js,.jsx webpack server --fix && npm run lint:w",
+    "lint:w": "esw -w --ext .js,.jsx webpack server src",
+    "lint": "eslint --ext .js,.jsx webpack server src --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:server": "webpack --config ./webpack/webpack.config.js"
   },
@@ -33,6 +33,7 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
+    "react-router-dom": "^4.1.1",
     "redux": "^3.6.0",
     "style-loader": "^0.16.1",
     "webpack": "^2.2.1",

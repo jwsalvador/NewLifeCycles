@@ -1,7 +1,6 @@
 import { express, routes, webpack } from './config';
 
 const server = (app) => {
-
   /*
    * Express configurations
   */
@@ -17,9 +16,8 @@ const server = (app) => {
    * Routes config
   */
   routes(app);
-  
-  return app;
 
+  return app;
 };
 
 export default server;

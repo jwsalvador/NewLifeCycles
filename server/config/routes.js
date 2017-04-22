@@ -1,9 +1,7 @@
-import path from 'path';
+import pageRenderer from '../render/pageRenderer';
 
 const routes = (app) => {
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'index.html'));
-  });
-}
+  app.get('*', pageRenderer);
+};
 
 export default routes;
