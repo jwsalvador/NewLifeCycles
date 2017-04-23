@@ -23,9 +23,10 @@ module.exports = (client = '') => {
     output: output(env, 'server'),
     resolve: resolve('server'),
     externals: configModule.externalModules,
+    plugins: plugins(env, 'server'),
     module: {
       loaders: configModule.loaders(env, 'server'),
-    },
+    }
   };
 
   const browser = {
@@ -44,5 +45,9 @@ module.exports = (client = '') => {
     },
   };
 
-  return isBrowserClient ? browser : server;
+  const render = env === 'production' 
+                ? [browser, server]
+                : isBrowserClient ? browser : server;
+
+  return render;
 };
