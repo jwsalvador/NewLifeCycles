@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Welcome from './Welcome';
 import AboutUs from './AboutUs';
+import Services from './Services';
 
 class HomePage extends Component {
   componentWillMount() {
@@ -12,6 +13,7 @@ class HomePage extends Component {
       <div>
         <Welcome />
         <AboutUs />
+        <Services />
       </div>
     );
   }

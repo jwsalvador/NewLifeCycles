@@ -2,9 +2,11 @@ import React from 'react';
 
 import styles from 'assets/css/components/header.css';
 
-const Header = ({as, children}) => {
+const Header = ({as, children, center}) => {
+  const style = [styles[as], center && styles.center].join(' ');
+
   return (
-    <div className={styles[as]}>
+    <div className={style}>
       {children}
     </div>
   );

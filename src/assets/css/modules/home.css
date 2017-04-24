@@ -9,7 +9,7 @@
 }
 
 .red {
-  color: red;
+  color: var(--colorPrimary);
 }
 
 .subContainer {
@@ -18,7 +18,7 @@
 }
 
 .section {
-  padding: 40px 90px;
+  padding: 50px 90px;
 }
 
 .infoTitle {
@@ -34,6 +34,7 @@
 
 .bgImg {
   background-image: url(http://theradavist.com/wp-content/uploads/2014/11/Meesterknecht-1.jpg);
+  background-attachment: fixed;
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -47,11 +48,26 @@
 }
 
 .aboutUs {
-  background-color: rgb(211, 211, 211);
+  background-color: var(--colorAccent);
 
   & p {
     font-size: 1.5rem;
     line-height: 30px;
   }
+}
+
+.tilesSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.bookNow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 

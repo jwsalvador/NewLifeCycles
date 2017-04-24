@@ -1,0 +1,34 @@
+:root {
+  --hoverTile {
+    transition: background-color .5s;
+    &:hover {
+      background-color: rgba(0, 0, 0, .6);
+    }
+  }
+}
+
+.tile {
+  width: 25%;
+  height: 40%;
+  text-align: center;
+  padding: 40px;
+  cursor: pointer;
+  border-radius: 5px;
+  position: relative;
+  @apply --hoverTile;
+}
+
+.tile p {
+  color: gray;
+}
+
+.tileHoveredItem {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

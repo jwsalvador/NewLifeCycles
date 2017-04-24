@@ -1,3 +1,14 @@
 :root {
-  --colorPrimary:                    green;
+  --colorDarkPrimary:                    #D32F2F;
+  --colorPrimary:                        #F44336;
+  --colorLightPrimary:                   #FFCDD2;
+  --colorPrimaryFont:                    #FFFFFF;
+
+  --colorAccent:                         #9E9E9E;
+  --colorFontAccent:                     #000000;
+
+  --primaryTheme {
+    background-color: var(--colorPrimary);
+    color: var(--colorPrimaryFont);
+  }
 }

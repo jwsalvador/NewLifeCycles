@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Full Service with Complete Strip of parts and rebuild",
+    "description": "Includes all services. All parts are quoted separately",
+    "price": "$150"
+  },
+  {
+    "id": 2,
+    "title": "Full Service without strip",
+    "description": "Full service - everything in the bike except full strip of parts. Additional part replacement is quoted separately",
+    "price": "$70"
+  },
+  {
+    "id": 3,
+    "title": "Drivetrain Tuning",
+    "description": "Groupset tuning for both front and rear shifter and derailleur",
+    "price": "$40"
+  },
+  {
+    "id": 4,
+    "title": "Brake Cable Replacement",
+    "description": "Replace and install new cables. All parts and cables are quoted separately",
+    "price": "$15"
+  },
+  {
+    "id": 5,
+    "title": "Drivetrain Gear Cable replacement",
+    "description": "Replace and install new gear cables. All parts/cables are quoted separately",
+    "price": "$15"
+  },
+  {
+    "id": 6,
+    "title": "Bottom Bracket and regreasing",
+    "description": "Check bottom bracket and regreasing",
+    "price": "$15"
+  }
+]

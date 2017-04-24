@@ -1,5 +1,5 @@
 :root {
-  --font-size-base: 2rem;
+  --font-size-base: 1.5rem;
 
   --borderBottom: {
     &:after {
@@ -18,23 +18,23 @@
   margin: 40px 0;
 }
 
-.h1 {
-  font-size: calc(var(--font-size-base) * 1.8)
+.h1, .h1 i {
+  font-size: calc(var(--font-size-base) * 2.1)
 }
 
-.h2 {
-  font-size: calc(var(--font-size-base) * 1.6)
+.h2, .h2 i {
+  font-size: calc(var(--font-size-base) * 1.9)
 }
 
-.h3 {
-  font-size: calc(var(--font-size-base) * 1.4)
+.h3, .h3 i {
+  font-size: calc(var(--font-size-base) * 1.7)
 }
 
-.h4 {
-  font-size: calc(var(--font-size-base) * 1.2)
+.h4, .h4 i {
+  font-size: calc(var(--font-size-base) * 1.5)
 }
 
-.h5 {
+.h5, .h5 i {
   font-size: var(--font-size-base);
 }
 
@@ -43,5 +43,13 @@
   position: relative;
   line-height: 100px;
   @apply --borderBottom;
+}
+
+.center {
+  text-align: center;
+  &:after {
+    left: 37%;
+    width: 25%;
+  }
 }
 
