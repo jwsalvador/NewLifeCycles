@@ -11,20 +11,20 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: 'home'
-    }
+      page: 'home',
+    };
     this.setPage = this.setPage.bind(this);
   }
 
   setPage(page) {
-    this.setState({page});
+    this.setState({ page });
   }
 
   render() {
     return (
       <div>
-        <TopNav current={this.state.page}/>
-        <Route exact path="/" render={() => <HomePage set={this.setPage}/>} />
+        <TopNav current={this.state.page} />
+        <Route exact path="/" render={() => <HomePage set={this.setPage} />} />
         <Route path="/services" render={() => <ServicesPage set={this.setPage} />} />
       </div>
     );

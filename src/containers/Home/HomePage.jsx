@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import Welcome from './Welcome';
 import AboutUs from './AboutUs';
@@ -18,5 +19,9 @@ class HomePage extends Component {
     );
   }
 }
+
+HomePage.propTypes = {
+  set: PropTypes.func.isRequired,
+};
 
 export default HomePage;

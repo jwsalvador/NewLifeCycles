@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import MenuItem from 'components/MenuItem';
 import Button from 'components/Button';
@@ -6,7 +7,7 @@ import styles from 'assets/css/modules/topnav.css';
 
 class TopNav extends Component {
   render() {
-    const inverted = {...this.props.current === 'home' ? {} : {inverted: true}}
+    const inverted = { ...this.props.current === 'home' ? {} : { inverted: true } };
     return (
       <div className={styles.container}>
         <div className={styles.menu}>
@@ -19,5 +20,9 @@ class TopNav extends Component {
     );
   }
 }
+
+TopNav.propTypes = {
+  current: PropTypes.string.isRequired,
+};
 
 export default TopNav;

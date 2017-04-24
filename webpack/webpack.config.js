@@ -26,7 +26,7 @@ module.exports = (client = '') => {
     plugins: plugins(env, 'server'),
     module: {
       loaders: configModule.loaders(env, 'server'),
-    }
+    },
   };
 
   const browser = {
@@ -45,9 +45,8 @@ module.exports = (client = '') => {
     },
   };
 
-  const render = env === 'production' 
-                ? [browser, server]
-                : isBrowserClient ? browser : server;
+  const prodRender = [browser, server];
+  const devRender = isBrowserClient ? browser : server;
 
-  return render;
+  return env === 'production' ? prodRender : devRender;
 };

@@ -26,7 +26,6 @@ const renderer = (req, res) => {
     if (context.url) {
       res.redirect(302, context.url);
     } else {
-
       // const html = `
       //   <!DOCTYPE html>
       //   <html>

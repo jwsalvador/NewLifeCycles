@@ -37,20 +37,20 @@ const loaders = function (env, client) {
   } else {
     that.push({
       test: /\.css$/,
-      use: 
+      use:
         ExtractTextPlugin.extract({
-        fallback: "style-loader",
-        use: [
-          {
-            loader: 'css-loader',
-            query: {
-              localIdentName: '[hash:8]',
-              modules: true
-            }
-          },
-          'postcss-loader'
-        ]
-      })
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              query: {
+                localIdentName: '[hash:8]',
+                modules: true,
+              },
+            },
+            'postcss-loader',
+          ],
+        }),
     });
   }
 

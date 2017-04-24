@@ -1,8 +1,18 @@
+@import '../common/colors';
+@import '../common/effects';
+
 :root {
   --ghostHover {
     transition: background-color .5s;
     &:hover {
-      background-color: red;
+      background-color: var(--colorPrimary);
+    }
+  }
+
+  --primaryHover {
+    transition: background-color .5s;
+    &:hover {
+      background-color: var(--colorDarkPrimary);
     }
   }
 }
@@ -12,6 +22,7 @@
   border: 2px solid red;
   cursor: pointer;
   color: white;
+  @apply --shadowEffect;
 }
 
 .small {
@@ -36,4 +47,5 @@
 
 .primary {
   background-color: red;
+  @apply --primaryHover;
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class ServicesPage extends Component {
   componentWillMount() {
@@ -12,5 +13,9 @@ class ServicesPage extends Component {
     );
   }
 }
+
+ServicesPage.propTypes = {
+  set: PropTypes.func.isRequired,
+};
 
 export default ServicesPage;
