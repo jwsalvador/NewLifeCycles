@@ -1,0 +1,23 @@
+:root {
+  --menu {
+    
+  }
+}
+
+.container {
+  position: fixed;
+  width: 100%;
+  display: flex;
+}
+
+.menu {
+  position: absolute;
+  right: 20px;
+
+  & div {
+    text-align: right;
+    padding: 20px 40px;  
+    display: inline-block;
+  }
+}
+

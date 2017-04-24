@@ -1,0 +1,28 @@
+:root {
+  --hoverLink {
+    transition: background-color .5s;
+    
+    &:hover {
+      background-color: rgba(0, 0, 0, .5);
+    }
+  }
+
+  --link {
+    & > div {
+      cursor: pointer;
+      @apply --hoverLink;
+    }
+  }
+}
+
+.linkContainer {
+  color: white;
+
+  @apply --link;
+}
+
+.linkContainerInverted {
+  color: black;
+
+  @apply --link;
+}
