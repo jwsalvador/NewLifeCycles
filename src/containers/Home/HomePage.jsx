@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Welcome from './Welcome';
+import AboutUs from './AboutUs';
 
 class HomePage extends Component {
   componentWillMount() {
@@ -10,6 +11,7 @@ class HomePage extends Component {
     return (
       <div>
         <Welcome />
+        <AboutUs />
       </div>
     );
   }
