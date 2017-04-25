@@ -13,7 +13,7 @@ const MenuItem = ({ children, to, inverted }) => (
   );
 
 MenuItem.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.string.isRequired,
   to: PropTypes.string,
   inverted: PropTypes.bool,
 };

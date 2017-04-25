@@ -33,7 +33,7 @@
 }
 
 .bgImg {
-  background-image: url(http://theradavist.com/wp-content/uploads/2014/11/Meesterknecht-1.jpg);
+  background-image: url(https://s3-ap-southeast-2.amazonaws.com/newlifecycles/bg.jpg);
   background-attachment: fixed;
   background-size: cover;
   width: 100%;

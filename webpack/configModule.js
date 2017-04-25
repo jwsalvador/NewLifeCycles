@@ -54,6 +54,8 @@ const loaders = function (env, client) {
     });
   }
 
+  that.push({ test: /\.(jpg|png)?$/, loader: 'file-loader' });
+
   return that;
 };
 

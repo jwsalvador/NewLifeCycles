@@ -1,23 +1,40 @@
-:root {
-  --menu {
-    
-  }
-}
+@import '../common/effects';
 
 .container {
   position: fixed;
   width: 100%;
-  display: flex;
+  transition: all .5s;
+  
+}
+
+.navScroll {
+  background-color: #d1d1d1;
+  z-index: 1;
+  @apply --shadowEffect;
+
+  & div {
+    color: black;
+  }
+}
+
+.logo {
+  background-image: url(https://s3-ap-southeast-2.amazonaws.com/newlifecycles/logo.jpg);
 }
 
 .menu {
+  margin-right: 50px;
   position: absolute;
-  right: 20px;
+  top: 0;
+  right: 0;
 
   & div {
     text-align: right;
     padding: 20px 40px;  
     display: inline-block;
+  }
+
+  & button {
+    margin: 0 20px;
   }
 }
 

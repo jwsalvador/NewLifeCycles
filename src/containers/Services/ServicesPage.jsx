@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import ServicesForm from './ServicesForm';
+import styles from 'assets/css/modules/services.css';
+
 class ServicesPage extends Component {
   componentWillMount() {
     this.props.set('services');
   }
   render() {
     return (
-      <div>
-        This is services page
+      <div className={styles.servicesContainer}>
+        <div className={styles.form}>
+          <ServicesForm />
+        </div>
       </div>
     );
   }

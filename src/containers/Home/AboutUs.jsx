@@ -4,10 +4,10 @@ import Header from 'components/Header';
 import { section, aboutUs } from 'assets/css/modules/home.css';
 
 const AboutUs = () => (
-  <div className={[section, aboutUs].join(' ')}>
+  <div id="aboutus-section" className={[section, aboutUs].join(' ')}>
     <Header as="section">A Few Words About Us</Header>
     <p>
-        We are buke enthusiasts who are passionate
+        We are bike enthusiasts who are passionate
         about all things related to bicycles.
         Our in-house mechanics have years of experience in
         repairing, resotring and maintaining bikes.

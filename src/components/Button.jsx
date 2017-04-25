@@ -19,9 +19,9 @@ const Button = ({ ghost, primary, onClick, children, size = 'small' }) => (
 Button.propTypes = {
   ghost: PropTypes.bool,
   primary: PropTypes.bool,
-  size: PropTypes.string.isRequired,
+  size: PropTypes.string,
   onClick: PropTypes.func,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.any.isRequired,
 };
 
 export default Button;

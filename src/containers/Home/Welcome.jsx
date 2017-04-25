@@ -9,7 +9,7 @@ const Welcome = () => (
       <div className={styles.container}>
         <div className={styles.subContainer} >
           <div className={styles.infoTitle}>
-            <span className={styles.red}>New</span> life cycles
+            <span className={styles.red}>New</span> Life Cycles
             </div>
           <div className={styles.infoBody}>
               We deliver quality repair and restoration services at a fraction of a cost.
