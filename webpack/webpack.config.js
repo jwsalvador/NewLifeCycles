@@ -39,7 +39,7 @@ module.exports = (client = '') => {
     name: 'client-side compile',
     entry: entry,
     output: output(env, 'browser'),
-    devtool: 'eval-source-map',
+    devtool: isProduction ? 'cheap-module-source-map' : 'eval-source-map',
     target: 'web',
     plugins: plugins(env, 'browser'),
     resolve: resolve('browser'),

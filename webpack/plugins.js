@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = function (env, client) {
   const plugins = {
@@ -22,6 +22,11 @@ module.exports = function (env, client) {
           disable: true,
           allChunks: true,
         }),
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        // new BundleAnalyzerPlugin({
+        //   statsFileName: 'stats.json',
+        //   reportFilename: 'report.html'
+        // })
       ],
       server: [
         new webpack.optimize.UglifyJsPlugin({
@@ -32,7 +37,12 @@ module.exports = function (env, client) {
         new ExtractTextPlugin({
           filename: 'styles.css',
           allChunks: true,
-        })
+        }),
+        // new BundleAnalyzerPlugin({
+        //   analyzerPort: 3333,
+        //   statsFileName: 'stats.json',
+        //   reportFilename: 'report.html'
+        // })
       ],
     },
 

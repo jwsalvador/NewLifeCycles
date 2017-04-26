@@ -12,7 +12,7 @@ const loaders = function (env, client) {
       presets: ['es2015', 'react', 'stage-0'],
     },
     exclude: [
-      path.join(__dirname, '..', '..', 'node_modules'),
+      path.join(__dirname, '..', 'node_modules'),
     ],
   };
 
@@ -37,6 +37,7 @@ const loaders = function (env, client) {
   } else {
     that.push({
       test: /\.css$/,
+      exclude: path.join(__dirname, '..', 'node_modules'),
       use:
         ExtractTextPlugin.extract({
           fallback: 'style-loader',
@@ -53,8 +54,6 @@ const loaders = function (env, client) {
         }),
     });
   }
-
-  that.push({ test: /\.(jpg|png)?$/, loader: 'file-loader' });
 
   return that;
 };
