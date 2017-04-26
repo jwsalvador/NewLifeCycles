@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 
 import TopNav from 'containers/Common/TopNav';
 import HomePage from 'containers/Home/HomePage';
-import ServicesPage from 'containers/Services/ServicesPage';
+import BookingPage from 'containers/Booking/BookingPage';
 
 require('assets/css/global.css');
 
@@ -25,7 +25,7 @@ class App extends Component {
       <div>
         <TopNav current={this.state.page} />
         <Route exact path="/" render={() => <HomePage set={this.setPage} />} />
-        <Route path="/services" render={() => <ServicesPage set={this.setPage} />} />
+        <Route path="/booking" render={() => <BookingPage set={this.setPage} />} />
       </div>
     );
   }

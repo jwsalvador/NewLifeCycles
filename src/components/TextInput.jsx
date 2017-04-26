@@ -20,7 +20,7 @@ TextInput.propTypes = {
   theme: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   className: PropTypes.node,
-  multiLine: PropTypes.book,
+  multiLine: PropTypes.bool,
 };
 
 export default TextInput;

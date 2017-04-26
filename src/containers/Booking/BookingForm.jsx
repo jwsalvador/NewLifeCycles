@@ -7,11 +7,11 @@ import MenuItem from 'material-ui/MenuItem';
 
 import TextInput from 'components/TextInput';
 import Button from 'components/Button';
-import styles from 'assets/css/modules/services.css';
+import styles from 'assets/css/modules/booking.css';
 
 import services from '../../../services.json';
 
-class ServicesForm extends Component {
+class BookingForm extends Component {
   renderServiceList() {
     return services.map(m => (
       <MenuItem key={m.id} value={m.id} primaryText={m.title} />
@@ -79,4 +79,4 @@ class ServicesForm extends Component {
   }
 }
 
-export default ServicesForm;
+export default BookingForm;

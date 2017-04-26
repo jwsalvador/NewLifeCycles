@@ -22,7 +22,7 @@ class Services extends Component {
 
   render() {
     if (this.state.id !== 0) {
-      return <Redirect to="/services" />;
+      return <Redirect to="/booking" />;
     }
     return (
       <div className={styles.section}>
