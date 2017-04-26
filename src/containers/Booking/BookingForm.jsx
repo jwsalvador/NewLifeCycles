@@ -14,7 +14,7 @@ import services from '../../../services.json';
 class BookingForm extends Component {
   renderServiceList() {
     return services.map(m => (
-      <MenuItem key={m.id} value={m.id} primaryText={m.title} />
+      <MenuItem key={m.id} value={m.id} primaryText={`${m.title} (${m.price})`} />
       ));
   }
 
