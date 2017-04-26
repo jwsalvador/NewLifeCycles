@@ -8,6 +8,7 @@ const env = process.env.NODE_ENV || 'development';
 
 module.exports = (client = '') => {
   const isBrowserClient = client === 'browser';
+  const isProduction = env === 'production';
 
   const server = {
     name: 'server-side compile',
@@ -29,12 +30,14 @@ module.exports = (client = '') => {
     },
   };
 
-  const browser = {
-    name: 'client-side compile',
-    entry: [
+  const entry = isProduction ? './src/index.jsx' : [
       './src/index.jsx',
       'webpack-hot-middleware/client?reload=true',
-    ],
+    ];
+
+  const browser = {
+    name: 'client-side compile',
+    entry: entry,
     output: output(env, 'browser'),
     devtool: 'eval-source-map',
     target: 'web',
@@ -48,5 +51,5 @@ module.exports = (client = '') => {
   const prodRender = [browser, server];
   const devRender = isBrowserClient ? browser : server;
 
-  return env === 'production' ? prodRender : devRender;
+  return isProduction ? prodRender : devRender;
 };

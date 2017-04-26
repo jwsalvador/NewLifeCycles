@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = function (env, client) {
   const plugins = {
@@ -18,6 +19,7 @@ module.exports = function (env, client) {
         }),
         new ExtractTextPlugin({
           filename: 'styles.css',
+          disable: true,
           allChunks: true,
         }),
       ],
@@ -30,7 +32,7 @@ module.exports = function (env, client) {
         new ExtractTextPlugin({
           filename: 'styles.css',
           allChunks: true,
-        }),
+        })
       ],
     },
 

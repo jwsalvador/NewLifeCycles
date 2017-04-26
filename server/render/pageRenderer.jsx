@@ -19,26 +19,40 @@ const renderer = (req, res) => {
         location={req.url}
         context={context}
       >
-        <App />
+        <App.default />
       </StaticRouter>,
     );
 
     if (context.url) {
       res.redirect(302, context.url);
     } else {
-      // const html = `
-      //   <!DOCTYPE html>
-      //   <html>
-      //     <head>
-      //     </head>
-      //     <body>
-
-      //     </body>
-      //   </html>
-      // `;
+      const html = `
+        <!DOCTYPE html>
+        <head>
+          <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+          <script>
+            WebFont.load({
+              google: {
+                families: ['Special Elite', 'Life Savers', 'Ruthie']
+              }
+            });
+          </script>
+          <style>
+            #app, #app > div, #app > div > div:nth-child(2) {
+              height: 100%;
+            }
+          </style>
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+          <link href="styles.css" rel="stylesheet">
+        </head>
+        <body>
+          <div id="app">${componentHtml}</div>
+          <script type='text/javascript' src='dist/bundle.js'></script>
+        </body>
+      `;
 
       res.set('content-type', 'text/html');
-      res.send(componentHtml);
+      res.send(html);
     }
   } else {
     res.sendFile(path.join(__dirname, '..', 'index.html'));

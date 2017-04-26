@@ -3,4 +3,5 @@ import express from 'express';
 
 export default (app) => {
   app.use('/dist', express.static(path.join(__dirname, 'public')));
+  app.use(express.static(path.join(__dirname)));
 };
