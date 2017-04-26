@@ -15,7 +15,7 @@ const Header = ({ as, children, center }) => {
 
 Header.propTypes = {
   as: PropTypes.string.isRequired,
-  children: PropTypes.any.isRequired,
+  children: PropTypes.node.isRequired,
   center: PropTypes.bool,
 };
 

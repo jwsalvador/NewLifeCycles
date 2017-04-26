@@ -1,58 +1,79 @@
+/* eslint class-methods-use-this: 1 */
+
 import React, { Component } from 'react';
 import DatePicker from 'material-ui/DatePicker';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
 import TextInput from 'components/TextInput';
+import Button from 'components/Button';
 import styles from 'assets/css/modules/services.css';
 
 import services from '../../../services.json';
 
 class ServicesForm extends Component {
   renderServiceList() {
-    return services.map(m =>  {
-      return (
-        <MenuItem key={m.id} value={m.id} primaryText={m.title} />
-      )
-    });
-    
+    return services.map(m => (
+      <MenuItem key={m.id} value={m.id} primaryText={m.title} />
+      ));
   }
 
   render() {
     return (
-      <div>
-        <div className={styles.formGroup}>
-          <TextInput theme="white" label="First Name" className={styles.formInput}/>
-          <TextInput theme="white" label="Last Name" className={styles.formInput}/>
-        </div>
+      <div className={styles.formContainer}>
+        <TextInput
+          theme="white"
+          label="Full name"
+          fullWidth
+        />
 
         <div className={styles.formGroup}>
+          <TextInput
+            theme="white"
+            label="Contact number"
+          />
+          <TextInput
+            theme="white"
+            label="Email"
+          />
+        </div>
+
+        <SelectField
+          floatingLabelText="Service Type"
+          floatingLabelStyle={{ color: 'white' }}
+          fullWidth
+        >
+          {this.renderServiceList()}
+        </SelectField>
+
+        <div className={styles.formGroup}>
+          <DatePicker
+            floatingLabelText="Appointment Date"
+            floatingLabelStyle={{ color: 'white' }}
+            hintText="Appointment Date"
+            hintStyle={{ color: 'white' }}
+            inputStyle={{ color: 'white' }}
+          />
           <SelectField
-            floatingLabelText="Services"
-            fullWidth={true}
-            floatingLabelStyle={{color: 'white'}}
+            floatingLabelText="Preferred time"
+            floatingLabelStyle={{ color: 'white' }}
           >
-            {this.renderServiceList()}
+            <MenuItem value="AM" primaryText="AM" />
+            <MenuItem value="PM" primaryText="PM" />
           </SelectField>
         </div>
-        
-        <div className={styles.formGroup}>
-          <DatePicker 
-            hintText="Appointment Date"
-            hintStyle={{color: 'white'}} 
-            inputStyle={{color: 'white'}} 
-            fullWidth={true}
-          />
-        </div>        
-        
 
-        <TextInput theme="white"
+        <TextInput
+          theme="white"
           label="Any comments"
-          multiLine={true}
+          multiLine
           rows={2}
           rowsMax={4}
-          fullWidth={true}
+          fullWidth
         />
+
+        <Button primary size="medium">Submit</Button>
+
       </div>
     );
   }

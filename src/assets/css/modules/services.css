@@ -19,11 +19,16 @@
   display: flex;
   padding: 15px 0;
 
-  & > div {
-    width: 100%;
+  & > div:nth-child(1) {
+    margin-right: 15px;
   }
 }
 
-.formInput {
-  margin-right: 30px;
+.formContainer {
+  width: 100%;
+  padding: 0 100px;
+
+  & button {
+    margin-top: 20px;
+  }
 }

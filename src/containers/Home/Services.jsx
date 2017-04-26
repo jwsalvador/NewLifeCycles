@@ -39,8 +39,9 @@ class Services extends Component {
                 onMouseEnter={
                   <Button
                     onClick={() => this.navigate(m.id)}
-                    primary 
-                    size="large"
+                    primary
+                    size="medium"
+                    fullWidth
                   >
                     Book Now
                   </Button>

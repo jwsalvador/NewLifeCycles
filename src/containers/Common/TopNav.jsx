@@ -11,8 +11,8 @@ class TopNav extends Component {
     super(props);
 
     this.state = {
-      logo: 'white'
-    }
+      logo: 'white',
+    };
     this.handleScroll = this.handleScroll.bind(this);
   }
 
@@ -20,31 +20,40 @@ class TopNav extends Component {
     window.addEventListener('scroll', this.handleScroll);
   }
 
-  handleScroll(e) {
-    let navBar = this.refs.navBar;
+  componentWillReceiveProps(nextProps) {
+    const hideMenu = nextProps.current === 'services';
+
+    if (hideMenu) {
+      this.setState({ logo: 'white' });
+    }
+  }
+
+  handleScroll() {
+    if (!document.getElementById('aboutus-section')) {
+      return;
+    }
     const elm = (document.getElementById('aboutus-section').getBoundingClientRect().top - document.body.scrollTop);
     const pageYOffset = window.pageXOffset;
-    
+
     if (pageYOffset >= elm) {
-      navBar.classList.add(styles.navScroll);
-      this.setState({logo: 'black'});
+      this.setState({ logo: 'black' });
     } else {
-      navBar.classList.remove(styles.navScroll);
-      this.setState({logo: 'white'});      
+      this.setState({ logo: 'white' });
     }
   }
 
   render() {
     const showMenu = this.props.current === 'home';
+    const isWhiteLogo = this.state.logo === 'white';
     return (
-      <div className={styles.container} ref="navBar">
-        <Link to="/" style={{height: '100%'}}>
-          {this.state.logo === 'white' 
-            ? <img src="https://s3-ap-southeast-2.amazonaws.com/newlifecycles/logo-white.png" width="12%" height="10%"/> 
-            : <img src="https://s3-ap-southeast-2.amazonaws.com/newlifecycles/logo-black.png" width="12%" height="10%"/> 
+      <div id="navBar" className={[styles.container, !isWhiteLogo && styles.navScroll].join(' ')}>
+        <Link to="/" style={{ height: '100%' }}>
+          {isWhiteLogo
+            ? <img src="https://s3-ap-southeast-2.amazonaws.com/newlifecycles/logo-white.png" alt="New Life Cycles" width="12%" height="10%" />
+            : <img src="https://s3-ap-southeast-2.amazonaws.com/newlifecycles/logo-black.png" alt="New Life Cycles" width="12%" height="10%" />
           }
         </Link>
-        {showMenu && 
+        {showMenu &&
           <div className={styles.menu}>
             <MenuItem>About</MenuItem>
             <MenuItem to="services" >Services</MenuItem>

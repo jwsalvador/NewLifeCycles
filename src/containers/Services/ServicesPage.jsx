@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import ServicesForm from './ServicesForm';
 import styles from 'assets/css/modules/services.css';
+import ServicesForm from './ServicesForm';
 
 class ServicesPage extends Component {
   componentWillMount() {
