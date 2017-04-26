@@ -10,7 +10,8 @@
     "clean": "rimraf dist",
     "build:server": "npm run clean && webpack --config ./webpack/webpack.config.js",
     "build:prod": "npm run clean && cross-env NODE_ENV=production webpack --progress --config ./webpack/webpack.config.js",
-    "open:prod": "npm run build:prod && cross-env NODE_ENV=production node dist/server.js"
+    "open:prod": "npm run build:prod && cross-env NODE_ENV=production node dist/server.js",
+    "heroku-postbuild": "npm run build:prod"
   },
   "repository": {
     "type": "git",
