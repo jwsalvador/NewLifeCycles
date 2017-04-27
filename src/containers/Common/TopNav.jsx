@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import MenuItem from 'components/MenuItem';
@@ -13,7 +12,7 @@ class TopNav extends Component {
 
     this.state = {
       logo: 'white',
-      redirect: false
+      redirect: false,
     };
     this.handleScroll = this.handleScroll.bind(this);
     this.navigate = this.navigate.bind(this);
@@ -25,13 +24,13 @@ class TopNav extends Component {
 
   componentWillReceiveProps(nextProps) {
     const hideMenu = nextProps.current === 'booking';
-    let state = Object.assign({}, this.state, { redirect: false });
+    const state = Object.assign({}, this.state, { redirect: false });
 
     if (hideMenu) {
       state.logo = 'white';
     }
 
-    this.setState(state)
+    this.setState(state);
   }
 
   navigate() {
@@ -72,7 +71,7 @@ class TopNav extends Component {
             <MenuItem>About</MenuItem>
             <MenuItem to="services" >Services</MenuItem>
             <MenuItem>Contact</MenuItem>
-            <Button 
+            <Button
               onClick={() => this.navigate()}
               primary
             >

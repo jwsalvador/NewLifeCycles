@@ -31,13 +31,13 @@ module.exports = (client = '') => {
   };
 
   const entry = isProduction ? './src/index.jsx' : [
-      './src/index.jsx',
-      'webpack-hot-middleware/client?reload=true',
-    ];
+    './src/index.jsx',
+    'webpack-hot-middleware/client?reload=true',
+  ];
 
   const browser = {
     name: 'client-side compile',
-    entry: entry,
+    entry,
     output: output(env, 'browser'),
     devtool: isProduction ? 'cheap-module-source-map' : 'eval-source-map',
     target: 'web',
