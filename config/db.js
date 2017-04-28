@@ -1,3 +1,3 @@
-import { isProduction } from './env';
+import { ENV } from './env';
 
-export const URL = isProduction ? process.env.MONGOLAB_URI : 'mongodb://localhost:27017/newlifecycles'
+export const URL = ENV === 'production' ? process.env.MONGOLAB_URI : 'mongodb://localhost:27017/newlifecycles'
