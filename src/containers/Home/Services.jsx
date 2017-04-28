@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import Header from 'components/Header';
 import Button from 'components/Button';
 import Tile from 'components/Tile';
 import styles from 'assets/css/modules/home.css';
+import { selectService } from 'ducks/modules/services';
 
-import services from '../../../services.json';
+// import services from '../../../services.json';
 
 class Services extends Component {
   constructor(props) {
@@ -17,6 +19,7 @@ class Services extends Component {
   }
 
   navigate(id) {
+    this.props.selectService(id);
     this.setState({ id });
   }
 
@@ -29,16 +32,16 @@ class Services extends Component {
         <Header as="section" center>Services</Header>
         <div className={styles.tilesSection}>
           {
-            services.map(m => (
+            this.props.services.map(m => (
               <Tile
-                key={m.id}
+                key={m._id}
                 icon={<i className="material-icons">build</i>}
                 header={m.title}
                 subHeader={m.description}
                 important={m.price}
                 onMouseEnter={
                   <Button
-                    onClick={() => this.navigate(m.id)}
+                    onClick={() => this.navigate(m._id)}
                     primary
                     size="medium"
                     fullWidth
@@ -55,4 +58,8 @@ class Services extends Component {
   }
 }
 
-export default Services;
+const mapStateToProps = ({ services }) => ({
+  services: services.all,
+});
+
+export default connect(mapStateToProps, { selectService })(Services);

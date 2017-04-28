@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/jwsalvador/NewLifeCycles#readme",
   "dependencies": {
+    "axios": "^0.16.1",
     "babel-cli": "^6.24.1",
     "babel-loader": "^6.4.1",
     "babel-preset-es2015": "^6.24.1",
@@ -48,6 +49,7 @@
     "react-router-dom": "^4.1.1",
     "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0",
     "rimraf": "^2.6.1",
     "style-loader": "^0.16.1",
     "url-loader": "^0.5.8",

@@ -4,7 +4,7 @@ const schema = new mongoose.Schema({
   title: String,
   description: String,
   price: String,
-  active: Boolean,
+  key: {type: String, unique: true},
 });
 
 export default mongoose.model('Services', schema);

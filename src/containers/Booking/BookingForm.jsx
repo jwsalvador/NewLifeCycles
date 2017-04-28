@@ -1,6 +1,7 @@
 /* eslint class-methods-use-this: 1 */
 
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import DatePicker from 'material-ui/DatePicker';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
@@ -9,13 +10,62 @@ import TextInput from 'components/TextInput';
 import Button from 'components/Button';
 import styles from 'assets/css/modules/booking.css';
 
-import services from '../../../services.json';
+const overrides = {
+  select: {
+    floatingLabelStyle: {
+      color: 'white',
+    },
+    labelStyle: {
+      color: 'white',
+    },
+    hintStyle: {
+      color: 'white',
+    },
+    inputStyle: {
+      color: 'white',
+    },
+  },
+};
 
 class BookingForm extends Component {
+  constructor(props) {
+    super(props);
+
+    this.handleValueChange = this.handleValueChange.bind(this);
+    this.handleSelectValueChange = this.handleSelectValueChange.bind(this);
+  }
+
+  componentWillMount() {
+    const { selected } = this.props;
+
+    this.state = {
+      selected,
+      name: '',
+      contact: '',
+      email: '',
+      appointment: new Date(),
+      time: 'AM',
+    };
+  }
+
   renderServiceList() {
-    return services.map(m => (
-      <MenuItem key={m.id} value={m.id} primaryText={`${m.title} (${m.price})`} />
+    return this.props.all.map(m => (
+      <MenuItem key={m._id} value={m._id} primaryText={`${m.title} (${m.price})`} />
       ));
+  }
+
+  handleSelectValueChange(e, index, value) {
+    if (!e) {
+      return this.setState({ appointment: index });
+    }
+    if (value.length === 2) {
+      return this.setState({ time: value });
+    }
+    this.setState({ selected: value });
+  }
+
+  handleValueChange(e, value) {
+    this.setState({ [e.target.attributes.type.value]: value });
   }
 
   render() {
@@ -23,40 +73,54 @@ class BookingForm extends Component {
       <div className={styles.formContainer}>
         <TextInput
           theme="white"
-          label="Full name"
+          label="*Full name"
           fullWidth
+          onChange={this.handleValueChange}
+          value={this.state.name}
+          type="name"
         />
 
         <div className={styles.formGroup}>
           <TextInput
             theme="white"
-            label="Contact number"
+            label="*Contact number"
+            onChange={this.handleValueChange}
+            value={this.state.contact}
+            type="contact"
           />
           <TextInput
             theme="white"
-            label="Email"
+            label="*Email"
+            onChange={this.handleValueChange}
+            value={this.state.email}
+            type="email"
           />
         </div>
 
         <SelectField
-          floatingLabelText="Service Type"
-          floatingLabelStyle={{ color: 'white' }}
+          {...overrides.select}
+          floatingLabelText="*Service Type"
           fullWidth
+          value={this.state.selected}
+          onChange={this.handleSelectValueChange}
         >
           {this.renderServiceList()}
         </SelectField>
 
         <div className={styles.formGroup}>
           <DatePicker
-            floatingLabelText="Appointment Date"
-            floatingLabelStyle={{ color: 'white' }}
+            {...overrides.select}
+            floatingLabelText="*Appointment Date"
             hintText="Appointment Date"
-            hintStyle={{ color: 'white' }}
-            inputStyle={{ color: 'white' }}
+            value={this.state.appointment}
+            defaultDate={new Date()}
+            onChange={this.handleSelectValueChange}
           />
           <SelectField
-            floatingLabelText="Preferred time"
-            floatingLabelStyle={{ color: 'white' }}
+            floatingLabelText="*Preferred time"
+            {...overrides.select}
+            value={this.state.time}
+            onChange={this.handleSelectValueChange}
           >
             <MenuItem value="AM" primaryText="AM" />
             <MenuItem value="PM" primaryText="PM" />
@@ -79,4 +143,9 @@ class BookingForm extends Component {
   }
 }
 
-export default BookingForm;
+const mapStateToProps = ({ services }) => ({
+  all: services.all,
+  selected: services.selected,
+});
+
+export default connect(mapStateToProps)(BookingForm);
