@@ -1,9 +1,11 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router-dom';
 import { renderToString } from 'react-dom/server';
 import path from 'path';
 
 import { ENV } from '../../config/env';
+import configureStore from '../../src/store/configureStore';
 
 /*
  * Server side rendering for production app (boost SEO performance)
@@ -14,13 +16,19 @@ const renderer = (req, res) => {
     const App = require('../../src/containers/App');
     const context = {};
 
+    const store = configureStore();
+
+
     const componentHtml = renderToString(
-      <StaticRouter
+      <Provider store={store}>
+        <StaticRouter
         location={req.url}
         context={context}
-      >
-        <App.default />
-      </StaticRouter>,
+        >
+          <App.default />
+        </StaticRouter>
+      </Provider>
+      ,
     );
 
     if (context.url) {
