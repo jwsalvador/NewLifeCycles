@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Welcome from './Welcome';
 import AboutUs from './AboutUs';
 import Services from './Services';
+import ContactUs from './ContactUs';
 
 class HomePage extends Component {
   componentWillMount() {
@@ -15,6 +16,7 @@ class HomePage extends Component {
         <Welcome />
         <AboutUs />
         <Services />
+        <ContactUs />
       </div>
     );
   }

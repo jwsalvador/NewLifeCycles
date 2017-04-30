@@ -25,6 +25,11 @@ const overrides = {
       color: 'white',
     },
   },
+  calendar: {
+    dialogContainerStyle: {
+      backgroundColor: 'black'
+    }
+  }
 };
 
 class BookingForm extends Component {

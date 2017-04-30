@@ -1,15 +1,26 @@
 :root {
   --font-size-base: 1.5rem;
 
+  --border {
+    position: absolute;      
+    content: ' ';
+    width: 30%;
+    height: 3px;
+    background-color: red;
+    bottom: 0;
+    left: 0
+  }
+
   --borderBottom: {
     &:after {
-      position: absolute;
-      content: ' ';
-      width: 30%;
-      height: 3px;
-      background-color: red;
-      bottom: 0;
-      left: 0
+      @apply --border;
+    }
+  }
+
+  --borderBottomShort {
+    &:after {
+      @apply --border;
+      width: 20%;
     }
   }
 }
@@ -51,5 +62,9 @@
     left: 37%;
     width: 25%;
   }
+}
+
+.borderShort {
+  @apply --borderBottomShort;
 }
 

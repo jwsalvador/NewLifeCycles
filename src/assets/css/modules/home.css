@@ -71,3 +71,23 @@
   align-items: center;
 }
 
+.contactUs {
+  background-color: var(--colorGray);
+  color: white;
+
+  & .info {
+    width: 40%;
+    padding: 0 50px;
+  }
+
+  & .map {
+    width: 60%;
+  }
+
+  & .date {
+    display: inline-block;
+    font-weight: bold;
+    width: 200px;
+  }
+}
+

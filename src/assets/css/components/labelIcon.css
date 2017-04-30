@@ -1,0 +1,22 @@
+.container {
+  margin: 70px 0;
+
+  & > div {
+    display: inline-block;
+    line-height: 35px;
+  }
+}
+
+.icon {
+  position: absolute;
+}
+
+.materialIcon {
+  font-size: 2rem;  
+}
+
+.iconBody {
+  padding: 0 55px;
+  font-size: 1.4rem;   
+}
+
