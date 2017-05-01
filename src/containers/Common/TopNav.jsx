@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import { ENABLE_BOOKING } from '../../../config/settings';
 import MenuItem from 'components/MenuItem';
 import Button from 'components/Button';
 import styles from 'assets/css/modules/topnav.css';
@@ -71,12 +72,12 @@ class TopNav extends Component {
             <MenuItem>About</MenuItem>
             <MenuItem to="services" >Services</MenuItem>
             <MenuItem>Contact</MenuItem>
-            <Button
+            {ENABLE_BOOKING && <Button
               onClick={() => this.navigate()}
               primary
             >
               Book Now
-            </Button>
+            </Button>}
           </div>
         }
       </div>

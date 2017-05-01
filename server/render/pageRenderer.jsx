@@ -3,9 +3,12 @@ import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router-dom';
 import { renderToString } from 'react-dom/server';
 import path from 'path';
+import fs from 'fs';
 
 import { ENV } from '../../config/env';
 import configureStore from '../../src/store/configureStore';
+
+const htmlTemplate = fs.readFileSync('./index.html', 'utf8');
 
 /*
  * Server side rendering for production app (boost SEO performance)
@@ -34,30 +37,10 @@ const renderer = (req, res) => {
     if (context.url) {
       res.redirect(302, context.url);
     } else {
-      const html = `
-        <!DOCTYPE html>
-        <head>
-          <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-          <script>
-            WebFont.load({
-              google: {
-                families: ['Special Elite', 'Life Savers', 'Ruthie']
-              }
-            });
-          </script>
-          <style>
-            #app, #app > div, #app > div > div:nth-child(2) {
-              height: 100%;
-            }
-          </style>
-          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-          <link href="styles.css" rel="stylesheet">
-        </head>
-        <body>
-          <div id="app">${componentHtml}</div>
-          <script type='text/javascript' src='dist/bundle.js'></script>
-        </body>
-      `;
+      const html = 
+        htmlTemplate
+        .replace('<!--COMPONENT-->', componentHtml)
+        .replace('<!--CSS-->', '<link href="styles.css" rel="stylesheet">');
 
       res.set('content-type', 'text/html');
       res.send(html);

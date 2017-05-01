@@ -3,7 +3,8 @@
     "webpack",
     "server",
     "package.json",
-    "index.js"
+    "index.js",
+    "config"
   ],
   "exec": "npm run build:server && node dist/server"
 }

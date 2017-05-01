@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import { ENABLE_BOOKING } from '../../../config/settings';
 import Header from 'components/Header';
 import Button from 'components/Button';
 import Tile from 'components/Tile';
@@ -27,11 +28,24 @@ class Services extends Component {
     if (this.state.id !== 0) {
       return <Redirect to="/booking" />;
     }
+    const mouseEnter = {
+      onMouseEnter: (
+        <Button
+          onClick={() => this.navigate(m._id)}
+          primary
+          size="medium"
+          fullWidth
+        >
+          Book Now
+        </Button>
+      )
+    }
     return (
       <div className={styles.section}>
         <Header as="section" center>Services</Header>
         <div className={styles.tilesSection}>
           {
+            
             this.props.services.map(m => (
               <Tile
                 key={m._id}
@@ -39,16 +53,7 @@ class Services extends Component {
                 header={m.title}
                 subHeader={m.description}
                 important={m.price}
-                onMouseEnter={
-                  <Button
-                    onClick={() => this.navigate(m._id)}
-                    primary
-                    size="medium"
-                    fullWidth
-                  >
-                    Book Now
-                  </Button>
-                }
+                {...ENABLE_BOOKING && mouseEnter}
               />
               ))
           }

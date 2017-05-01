@@ -1,0 +1,1 @@
+export const ENABLE_BOOKING = process.env.ENABLE_BOOKING || true;
