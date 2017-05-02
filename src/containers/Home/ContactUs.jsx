@@ -42,8 +42,9 @@ const ContactUs = () => {
         </div>
         <div className={styles.map}>
           <GoogleMapReact
-          center={[-37.7354427, 144.7510023]}
-          zoom={14}
+            bootstrapURLKeys={{key: 'AIzaSyDIZ2hf82Hj6TuEZ_daMtvu3NgEcqap2z8'}}
+            center={[-37.7354427, 144.7510023]}
+            zoom={14}
           >
             <MapsContainer
               lat={-37.7354427}

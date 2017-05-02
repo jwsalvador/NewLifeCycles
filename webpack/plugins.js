@@ -15,6 +15,7 @@ module.exports = function (env, client) {
         new webpack.DefinePlugin({
           'process.env': {
             NODE_ENV: JSON.stringify('production'),
+            ENABLE_BOOKING: JSON.stringify(process.env.ENABLE_BOOKING)
           },
         }),
         new ExtractTextPlugin({
