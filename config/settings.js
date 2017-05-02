@@ -1,1 +1,1 @@
-export const ENABLE_BOOKING = process.env.ENABLE_BOOKING === 'true' || true;
+export const ENABLE_BOOKING = process.env.ENABLE_BOOKING ? process.env.ENABLE_BOOKING === 'true' : true;

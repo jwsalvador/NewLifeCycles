@@ -18,7 +18,7 @@
 }
 
 .section {
-  padding: 50px 90px;
+  padding: 30px 90px;
 }
 
 .infoTitle {
@@ -51,7 +51,7 @@
   background-color: var(--colorAccent);
 
   & p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     line-height: 30px;
   }
 }
@@ -75,13 +75,19 @@
   background-color: var(--colorGray);
   color: white;
 
+  & .infoContainer {
+    display: flex;
+  }
+
   & .info {
     width: 40%;
-    padding: 0 50px;
+    padding-left: 50px;
   }
 
   & .map {
-    width: 60%;
+    color: var(--colorPrimary);
+    width: 50%;
+    height: 400px;
   }
 
   & .date {
