@@ -51,6 +51,7 @@
   bottom: 10px;
   opacity: .1;
   background-size: 70%;
+  z-index: -1;
 }
 
 .overlay {
@@ -76,6 +77,15 @@
   justify-content: space-between;
 }
 
+.moreServices {
+  text-align: center;
+  margin-top: 25px;
+
+  & button {
+    color: black;
+  }
+}
+
 .bookNow {
   position: absolute;
   width: 100%;
@@ -86,7 +96,8 @@
 }
 
 .contactUs {
-  background-image: linear-gradient(135deg, black 40%, grey 20%);
+  // background-image: linear-gradient(135deg, black 40%, grey 20%);
+  background-color: var(--colorGray);
   color: white;
 
   & .infoContainer {
