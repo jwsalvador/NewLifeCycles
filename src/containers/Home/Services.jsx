@@ -42,6 +42,7 @@ class Services extends Component {
     }
     return (
       <div className={styles.section}>
+        <div className={styles.servicesBg} />
         <Header as="section" center>Services</Header>
         <div className={styles.tilesSection}>
           {

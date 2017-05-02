@@ -1,4 +1,5 @@
 @import '../common/colors';
+@import '../common/effects';
 
 .container {
   display: flex;
@@ -19,6 +20,7 @@
 
 .section {
   padding: 30px 90px;
+  position: relative;
 }
 
 .infoTitle {
@@ -40,6 +42,17 @@
   height: 100%;
 }
 
+.servicesBg {
+  position: absolute;
+  background: url(https://s3-ap-southeast-2.amazonaws.com/newlifecycles/bicycle-bg.png) no-repeat left bottom;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 10px;
+  opacity: .1;
+  background-size: 70%;
+}
+
 .overlay {
   background-color: rgba(0, 0, 0, .7);
   background-size: cover;
@@ -49,6 +62,7 @@
 
 .aboutUs {
   background-color: var(--colorAccent);
+  padding-bottom: 80px;
 
   & p {
     font-size: 1.2rem;
@@ -72,7 +86,7 @@
 }
 
 .contactUs {
-  background-color: var(--colorGray);
+  background-image: linear-gradient(135deg, black 40%, grey 20%);
   color: white;
 
   & .infoContainer {
