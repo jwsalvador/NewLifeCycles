@@ -96,8 +96,7 @@
 }
 
 .contactUs {
-  // background-image: linear-gradient(135deg, black 40%, grey 20%);
-  background-color: var(--colorGray);
+  background-image: linear-gradient(135deg, var(--colorGray) 20%, black);
   color: white;
 
   & .infoContainer {
@@ -118,7 +117,7 @@
   & .date {
     display: inline-block;
     font-weight: bold;
-    width: 200px;
+    width: 150px;
   }
 }
 

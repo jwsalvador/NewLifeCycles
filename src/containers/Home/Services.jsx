@@ -6,6 +6,7 @@ import { ENABLE_BOOKING } from '../../../config/settings';
 import Header from 'components/Header';
 import Button from 'components/Button';
 import Tile from 'components/Tile';
+import ServicesList from './ServicesList';
 import styles from 'assets/css/modules/home.css';
 import { selectService } from 'ducks/modules/services';
 
@@ -59,6 +60,10 @@ class Services extends Component {
               ))
           }
         </div>
+        <div className={styles.moreServices}>
+          <ServicesList />
+        </div>
+        
       </div>
     );
   }

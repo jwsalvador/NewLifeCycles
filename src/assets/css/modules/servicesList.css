@@ -1,0 +1,48 @@
+@import '../common/colors';
+
+:root {
+  --logo {
+    position: relative;
+    &:before {
+      content: ' ';
+      position: absolute;
+      width: 70%;
+      height: 140px;
+      background: url(https://s3-ap-southeast-2.amazonaws.com/newlifecycles/logo-black.png) no-repeat;
+      -webkit-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+      background-size: cover;
+      left: -195px;
+      bottom: -500px;
+    }
+  }
+}
+
+.container {
+  text-align: right;
+  font-family: 'Francois One';
+}
+
+.item{
+  width: 80%;
+  float: right;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.description {
+  font-size: .9rem;
+}
+
+.price {
+  font-size: 1.5rem;
+  color: var(--colorPrimary);
+}
+
+.logo {
+  
+}
