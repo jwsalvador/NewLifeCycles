@@ -10,7 +10,7 @@ const AboutUs = () => (
         We are bike enthusiasts who are passionate
         about all things related to bicycles.
         Our in-house mechanics have years of experience in
-        repairing, resotring and maintaining bikes.
+        repairing, restoring and maintaining bikes.
       </p>
     <p>
         We cater to all types of bikes--BMX, MTB,
